@@ -1,0 +1,93 @@
+.main_container {
+  width: 50vw;
+  margin-top: 5%;
+  margin-left: 5%;
+  padding: 30px;
+  background-color: rgba(28, 226, 48, 1);
+  overflow: hidden;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 3%;
+}
+
+.text_container {
+  background-color: rgba(41, 37, 37, 1);
+  color: yellow;
+  padding: 3%;
+  box-shadow: 0px 0px 20px black;
+}
+
+.portrait_container {
+  position: relative;
+}
+
+.portrait {
+  box-shadow: 0px 0px 20px black;
+}
+
+.glasses {
+  position: absolute;
+  left: 55px;
+  top: 66px;
+  z-index: 6;
+  transition: top 2s ease-in-out;
+}
+
+.left_eye {
+  position: absolute;
+  left: 105px;
+  top: 90px;
+  z-index: 3;
+}
+
+.rigth_eye {
+  position: absolute;
+  left: 147px;
+  top: 85px;
+  z-index: 3;
+}
+
+.portrait_container:hover .glasses {
+  position: absolute;
+  left: 55px;
+  top: 40px;
+}
+
+.portrait_container:hover .rigth_eye {
+  animation-name: rotate_rigth_eye;
+  animation-duration: 2s;
+  animation-delay: 0s;
+  animation-iteration-count: 16;
+}
+
+@keyframes rotate_rigth_eye {
+  0% {
+    transform: rotate(-60deg);
+  }
+  50% {
+    transform: rotate(60deg);
+  }
+  100% {
+    transform: rotate(-60deg);
+  }
+}
+
+.portrait_container:hover .left_eye {
+  animation-name: rotate_left_eye;
+  animation-duration: 4s;
+  animation-delay: 0s;
+  animation-iteration-count: 6;
+}
+
+@keyframes rotate_left_eye {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}

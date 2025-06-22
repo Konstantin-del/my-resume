@@ -1,0 +1,49 @@
+.container {
+  color: white;
+  font-size: 40px;
+  margin-left: 10px;
+}
+
+.start {
+  margin-left: 100px;
+}
+.end {
+  margin-left: 0px;
+  transition: 99ms;
+}
+
+.long_end {
+  margin-left: 0px;
+
+  animation-name: chenge-margin;
+  animation-duration: 500ms;
+  animation-delay: 10ms;
+  animation-iteration-count: 1;
+}
+
+@keyframes chenge-margin {
+  0% {
+    margin-left: 100px;
+  }
+  20% {
+    margin-left: 0px;
+  }
+  40% {
+    margin-left: 60px;
+  }
+  60% {
+    margin-left: 0px;
+  }
+  76% {
+    margin-left: 40px;
+  }
+  88% {
+    margin-left: 0px;
+  }
+  96% {
+    margin-left: 20px;
+  }
+  100% {
+    margin-left: 0px;
+  }
+}
