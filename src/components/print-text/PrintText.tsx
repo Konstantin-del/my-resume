@@ -35,7 +35,6 @@ export const PrintText = (props: Props) => {
         setCountLetter((prev) => (prev += 0.5));
       }, 100);
     } else if (arr.length - 1 == countLetter) {
-      console.log("her");
       setCurrentMargin("long_end");
     }
   });

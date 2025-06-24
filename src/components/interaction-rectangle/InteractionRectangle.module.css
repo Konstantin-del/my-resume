@@ -1,0 +1,36 @@
+.main_container {
+  position: relative;
+  width: 10vw;
+  height: 150px;
+  padding: 30px;
+  background-color: rgba(28, 226, 48, 1);
+  overflow: hidden;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 3%;
+}
+
+.btn {
+  position: absolute;
+  background-color: rgba(41, 37, 37, 1);
+  border: none;
+  color: white;
+  box-shadow: 0px 0px 10px black;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.btn:hover {
+  color: yellow;
+  cursor: pointer;
+  padding: 15px;
+}
+
+.position_btn1 {
+  top: 30px;
+}
+
+.position_btn2 {
+  top: 80px;
+}
