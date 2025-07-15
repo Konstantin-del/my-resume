@@ -3,24 +3,28 @@ import styles from "./GeodataModal.module.css";
 
 type Props = {
   hiddenGeodata: () => void;
+  submitLocation: (value: string) => void;
 };
 
-export const GeodataModal = ({ hiddenGeodata }: Props) => {
+export const GeodataModal = ({ hiddenGeodata, submitLocation }: Props) => {
   const [value, setValue] = React.useState("");
+  const [error, setError] = React.useState("");
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     if (value.length > 1) {
-      const regex = /^[A-Za-zа-яА-ЯёЁ]+$/;
+      const regex = /^[A-Za-zа-яА-ЯёЁ -]+$/;
       if (regex.test(value)) {
-        console.log("submit");
+        submitLocation(value);
       } else {
-        console.log("the name must contain only letter");
+        setError("the name must contain only letter");
       }
     } else {
-      console.log("the name must contain more letters");
+      setError("the name must contain more letters");
     }
+    hiddenGeodata();
+    setValue("");
   };
 
   return (
@@ -31,17 +35,16 @@ export const GeodataModal = ({ hiddenGeodata }: Props) => {
           x
         </button>
 
-        <form onSubmit={handleSubmit}>
-          <label>
-            enter region
-            <input
-              type="text"
-              value={value}
-              onChange={(e) => setValue(e.target.value)}
-            />
-            <button type="submit">Submit</button>
-          </label>
+        <form className={styles.form_container} onSubmit={handleSubmit}>
+          <label>enter region</label>
+          <input
+            type="text"
+            value={value}
+            onChange={(e) => setValue(e.target.value)}
+          />
+          <button type="submit">Submit</button>
         </form>
+        <div className={styles.error_text}>{error}</div>
       </div>
     </>
   );

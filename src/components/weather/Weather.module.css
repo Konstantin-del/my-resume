@@ -1,0 +1,33 @@
+.main_container {
+  background-color: rgba(41, 37, 37, 1);
+  color: white;
+  border: solid 2px white;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid_container {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-items: center;
+  align-items: center;
+}
+
+.color_text {
+  color: yellow;
+}
+
+.error_text {
+  color: red;
+}
+
+.text_size {
+  font-size: 25px;
+}
+
+svg:hover {
+  cursor: pointer;
+}

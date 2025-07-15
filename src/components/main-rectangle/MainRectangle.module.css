@@ -8,14 +8,17 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  gap: 3%;
+  gap: 2rem;
+  border: solid 5px white;
+  box-shadow: inset 0px 0px 10px 5px black;
 }
 
 .text_container {
   background-color: rgba(41, 37, 37, 1);
-  color: yellow;
   padding: 3%;
   box-shadow: 0px 0px 20px black;
+  position: relative;
+  color: yellow;
 }
 
 .portrait_container {
@@ -89,5 +92,39 @@
   }
   100% {
     transform: rotate(0deg);
+  }
+}
+
+.h2_first {
+  color: yellow;
+  animation-name: change_color;
+  animation-duration: 10s;
+  animation-delay: 0s;
+  animation-iteration-count: 10;
+}
+
+.h2_second {
+  color: yellow;
+  animation-name: change_color;
+  animation-duration: 10s;
+  animation-delay: 2s;
+  animation-iteration-count: 10;
+}
+
+@keyframes change_color {
+  0% {
+    color: yellow;
+  }
+  25% {
+    color: green;
+  }
+  50% {
+    color: red;
+  }
+  75% {
+    color: blue;
+  }
+  100% {
+    color: yellow;
   }
 }

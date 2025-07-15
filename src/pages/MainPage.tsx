@@ -3,43 +3,39 @@ import styles from "./MainPage.module.css";
 import { Header } from "../components/header/Header";
 import { MainRectangle } from "../components/main-rectangle/MainRectangle";
 import { InteractionRectangle } from "../components/interaction-rectangle/InteractionRectangle";
-import { Weather } from "../components/weather/Weather";
 import { GeodataModal } from "../components/geodata-modal/GeodataModal";
 
 type Props = {};
 
 export const MainPage = (props: Props) => {
-  const [isShowWeather, setIsShowWeather] = React.useState(false);
   const [isShowGeodata, setIsShowGeodata] = React.useState(false);
+  const [region, setRegion] = React.useState<string>("");
 
-  function getWeather() {
-    if (navigator.geolocation) {
-      console.log("her");
-      navigator.geolocation.getCurrentPosition(
-        function (position) {
-          const lat = position.coords.latitude;
-          const lon = position.coords.longitude;
-          console.log(lat, lon, "====");
-        },
-        function () {
-          setIsShowGeodata(true);
-        }
-      );
-    } else {
-      console.log("Геолокация не поддерживается данным браузером.");
-    }
+  function toggleIsShowGeodata() {
+    setIsShowGeodata((prev) => !prev);
   }
 
-  function chengeIsShowGeodata() {
-    setIsShowGeodata(false);
+  // function toggleIsShowWeather() {
+  //   setIsShowWeather(false);
+  // }
+
+  function submitLocation(value: string) {
+    localStorage.setItem("region", value);
+    console.log(value);
+    setRegion(value);
   }
 
   return (
     <div className={styles.main_container}>
       <Header />
-      {isShowGeodata && <GeodataModal hiddenGeodata={chengeIsShowGeodata} />}
+      {isShowGeodata && (
+        <GeodataModal
+          hiddenGeodata={toggleIsShowGeodata}
+          submitLocation={submitLocation}
+        />
+      )}
       <MainRectangle />
-      <InteractionRectangle getWeather={getWeather} />
+      <InteractionRectangle showModal={toggleIsShowGeodata} region={region} />
     </div>
   );
 };

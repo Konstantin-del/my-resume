@@ -17,11 +17,9 @@ export const MainRectangle = (props: Props) => {
         <img className={styles.rigth_eye} src={rigth_eye} alt="rigth_eye" />
       </div>
       <div className={styles.text_container}>
-        <h2>
-          Pukhov Konstantin
-          <br />
-          fullstack developer
-        </h2>
+        <h2 className={styles.h2_first}>Pukhov Konstantin</h2>
+        <h2 className={styles.h2_second}>fullstack developer</h2>
+        {/* <div className={styles.light}></div> */}
       </div>
     </div>
   );

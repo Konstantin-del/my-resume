@@ -1,14 +1,21 @@
 .main_container {
-  position: relative;
-  width: 10vw;
-  height: 150px;
+  margin-top: 5%;
   padding: 30px;
   background-color: rgba(28, 226, 48, 1);
   overflow: hidden;
+  border: solid 5px white;
+  box-shadow: inset 0px 0px 10px 5px black;
+}
+
+.button_container {
+  width: 10vw;
+  height: 150px;
+  padding: 30px;
+  position: relative;
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 3%;
 }
 
 .btn {
