@@ -17,7 +17,9 @@ export const Weather = ({ showModal, region }: Props) => {
     return new Promise((resolve, reject) => {
       navigator.geolocation.getCurrentPosition(
         (position) => {
-          resolve(`${position.coords.latitude},${position.coords.longitude}`);
+          const place = `${position.coords.latitude},${position.coords.longitude}`;
+          resolve(place);
+          localStorage.setItem("region", place);
         },
         (error) => {
           reject(error.message);
