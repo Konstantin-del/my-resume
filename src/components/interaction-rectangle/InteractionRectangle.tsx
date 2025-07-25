@@ -25,7 +25,7 @@ export const InteractionRectangle = ({
           get weather forecast
         </button>
         <button className={`${styles.btn} ${styles.position_btn2}`}>
-          hren morga
+          not relese
         </button>
       </div>
       <Weather showModal={showModal} region={region} />
